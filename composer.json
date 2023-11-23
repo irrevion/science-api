@@ -1,0 +1,21 @@
+{
+    "name": "irrevion/science-api",
+    "description": "REST API for calculations and conversions",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Valentin Belousov",
+            "email": "irrevion@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "3.0.x-dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    }
+}
