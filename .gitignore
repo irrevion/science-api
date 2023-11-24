@@ -7,3 +7,5 @@ themes/classic/views/
 
 /vendor/
 /config/
+.trash/
+runtime/
