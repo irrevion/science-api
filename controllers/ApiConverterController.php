@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\web\Response;
+use irrevion\science\Physics\Unit\Categories;
 use app\helpers\Utils;
 
 
@@ -13,22 +14,14 @@ class ApiConverterController extends Controller {
 	public function actionUnitCategories() {
 		Yii::$app->response->format = 'json';
 
+		require_once "../vendor/irrevion/science/autoloader.php"; // temporary
+		$categories = array_keys(Categories::list);
+
 		$response = [
 			'success' => true,
-			'message' => 'Messages list retrieved.',
+			'message' => 'Categories list retrieved.',
 			'data' => [
-				'messages' => [
-					0 => [
-						'uid' => 'KS7G7F6G8215C56C07579',
-						'department' => 'Çağrı mərkəzi',
-						'departmentCode' => 'KS7G7F6',
-						'type' => null,
-						'subject' => 'Mock message 001',
-						'messageText' => "This is test of mock messages import...\n\nThat's it.",
-						'sentAt' => '2020-09-27 08:13:54',
-						'documents' => ['Sənəd qəbulu şöbəsi.pdf', 'Önəmli hesabatlar №7.png']
-					]
-				],
+				'categories' => $categories
 			],
 		];
 

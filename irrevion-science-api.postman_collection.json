@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "014d5f38-ab83-4456-b691-fced4d7bf42e",
+		"name": "irrevion/science-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30562359"
+	},
+	"item": [
+		{
+			"name": "converter/getUnitCategories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/science-api/web/api/physics/units/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"science-api",
+						"web",
+						"api",
+						"physics",
+						"units",
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "basic",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/science-api/web/api/physics/units/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"science-api",
+								"web",
+								"api",
+								"physics",
+								"units",
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 24 Nov 2023 20:44:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "X-Debug-Tag",
+							"value": "65610b21378d2"
+						},
+						{
+							"key": "X-Debug-Duration",
+							"value": "38"
+						},
+						{
+							"key": "X-Debug-Link",
+							"value": "/science-api/web/debug/default/view?tag=65610b21378d2"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Categories list retrieved.\",\n    \"data\": {\n        \"categories\": [\n            \"angle\",\n            \"brightness\",\n            \"electric_current\",\n            \"electric_tension\",\n            \"energy\",\n            \"length\",\n            \"luminous_intensity\",\n            \"mass\",\n            \"substance_amount\",\n            \"temperature\",\n            \"time\"\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}

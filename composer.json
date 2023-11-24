@@ -9,9 +9,14 @@
             "email": "irrevion@gmail.com"
         }
     ],
+    "support": {
+        "source": "https://github.com/irrevion/science-api"
+    },
     "minimum-stability": "dev",
     "require": {
-        "yiisoft/yii2": "3.0.x-dev"
+        "yiisoft/yii2": "~2.0.45",
+        "yiisoft/yii2-bootstrap5": "~2.0.2",
+        "irrevion/science": "*",
     },
     "config": {
         "allow-plugins": {

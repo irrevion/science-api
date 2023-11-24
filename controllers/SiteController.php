@@ -14,4 +14,21 @@ class SiteController extends Controller {
 		$this->layout = false;
 		return $this->render('welcome');
 	}
+
+	public function actionError() {
+		$exception = Yii::$app->errorHandler->exception;
+		Yii::$app->response->format = 'json';
+		$response = [
+			'success' => false,
+			'message' => 'Invalid endpoint',
+			'code' => 404,
+			'errors' => [
+				(array) $exception
+			],
+		];
+
+		return $response;
+	}
 }
+
+?>
