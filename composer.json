@@ -13,14 +13,15 @@
         "source": "https://github.com/irrevion/science-api"
     },
     "minimum-stability": "dev",
-    "require": {
-        "yiisoft/yii2": "~2.0.45",
-        "yiisoft/yii2-bootstrap5": "~2.0.2",
-        "irrevion/science": "*",
-    },
     "config": {
         "allow-plugins": {
             "yiisoft/yii2-composer": true
         }
+    },
+    "require": {
+        "irrevion/science": "dev-main",
+        "yiisoft/yii2": "~2.0",
+        "yidas/yii2-composer-bower-skip": "dev-master",
+        "yiisoft/yii2-bootstrap5": "~2.0.2"
     }
 }

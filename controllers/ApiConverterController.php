@@ -14,7 +14,6 @@ class ApiConverterController extends Controller {
 	public function actionUnitCategories() {
 		Yii::$app->response->format = 'json';
 
-		require_once "../vendor/irrevion/science/autoloader.php"; // temporary
 		$categories = array_keys(Categories::list);
 
 		$response = [
