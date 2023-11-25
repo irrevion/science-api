@@ -98,6 +98,261 @@
 					"body": "{\n    \"success\": true,\n    \"message\": \"Categories list retrieved.\",\n    \"data\": {\n        \"categories\": [\n            \"angle\",\n            \"brightness\",\n            \"electric_current\",\n            \"electric_tension\",\n            \"energy\",\n            \"length\",\n            \"luminous_intensity\",\n            \"mass\",\n            \"substance_amount\",\n            \"temperature\",\n            \"time\"\n        ]\n    }\n}"
 				}
 			]
+		},
+		{
+			"name": "404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/science-api/web/api/404",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"science-api",
+						"web",
+						"api",
+						"404"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "basic",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/science-api/web/api/404",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"science-api",
+								"web",
+								"api",
+								"404"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 24 Nov 2023 21:08:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "X-Debug-Tag",
+							"value": "656110bb121a5"
+						},
+						{
+							"key": "X-Debug-Duration",
+							"value": "36"
+						},
+						{
+							"key": "X-Debug-Link",
+							"value": "/science-api/web/debug/default/view?tag=656110bb121a5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1201"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Invalid endpoint\",\n    \"code\": 404,\n    \"errors\": [\n        {\n            \"\\u0000*\\u0000message\": \"Page not found.\",\n            \"\\u0000Exception\\u0000string\": \"\",\n            \"\\u0000*\\u0000code\": 0,\n            \"\\u0000*\\u0000file\": \"D:\\\\www\\\\science-api\\\\vendor\\\\yiisoft\\\\yii2\\\\web\\\\Application.php\",\n            \"\\u0000*\\u0000line\": 115,\n            \"\\u0000Exception\\u0000trace\": [\n                {\n                    \"file\": \"D:\\\\www\\\\science-api\\\\vendor\\\\yiisoft\\\\yii2\\\\base\\\\Application.php\",\n                    \"line\": 384,\n                    \"function\": \"handleRequest\",\n                    \"class\": \"yii\\\\web\\\\Application\",\n                    \"type\": \"->\",\n                    \"args\": [\n                        {\n                            \"enableCsrfValidation\": true,\n                            \"csrfParam\": \"_csrf\",\n                            \"csrfCookie\": {\n                                \"httpOnly\": true\n                            },\n                            \"enableCsrfCookie\": true,\n                            \"enableCookieValidation\": true,\n                            \"cookieValidationKey\": \"JEVlfdRyISiGi-9_0iIm4SMJg-F0yqXr\",\n                            \"methodParam\": \"_method\",\n                            \"parsers\": [],\n                            \"trustedHosts\": [],\n                            \"secureHeaders\": [\n                                \"X-Forwarded-For\",\n                                \"X-Forwarded-Host\",\n                                \"X-Forwarded-Proto\",\n                                \"X-Forwarded-Port\",\n                                \"Front-End-Https\",\n                                \"X-Rewrite-Url\",\n                                \"X-Original-Host\"\n                            ],\n                            \"ipHeaders\": [\n                                \"X-Forwarded-For\"\n                            ],\n                            \"portHeaders\": [\n                                \"X-Forwarded-Port\"\n                            ],\n                            \"secureProtocolHeaders\": {\n                                \"X-Forwarded-Proto\": [\n                                    \"https\"\n                                ],\n                                \"Front-End-Https\": [\n                                    \"on\"\n                                ]\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"file\": \"D:\\\\www\\\\science-api\\\\web\\\\index.php\",\n                    \"line\": 12,\n                    \"function\": \"run\",\n                    \"class\": \"yii\\\\base\\\\Application\",\n                    \"type\": \"->\",\n                    \"args\": []\n                }\n            ],\n            \"\\u0000Exception\\u0000previous\": {},\n            \"statusCode\": 404\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "getUnitsByCategory (invalid)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/science-api/web/api/physics/units/category/lenght",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"science-api",
+						"web",
+						"api",
+						"physics",
+						"units",
+						"category",
+						"lenght"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/science-api/web/api/physics/units/category/lenght",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"science-api",
+								"web",
+								"api",
+								"physics",
+								"units",
+								"category",
+								"lenght"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 25 Nov 2023 13:38:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Invalid category\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getUnitsByCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/science-api/web/api/physics/units/category/energy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"science-api",
+						"web",
+						"api",
+						"physics",
+						"units",
+						"category",
+						"energy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "energy units",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/science-api/web/api/physics/units/category/energy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"science-api",
+								"web",
+								"api",
+								"physics",
+								"units",
+								"category",
+								"energy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 25 Nov 2023 13:39:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Units list retrieved.\",\n    \"data\": {\n        \"units\": [\n            \"ElectronVolt\",\n            \"Joule\"\n        ]\n    }\n}"
+				}
+			]
 		}
 	]
 }

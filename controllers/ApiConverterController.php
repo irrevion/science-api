@@ -27,20 +27,32 @@ class ApiConverterController extends Controller {
 		return $response;
 	}
 
-	public function actionGetDocument() {
-		$message_uid = Yii::$app->request->get('message_uid');
-		$document_name = Yii::$app->request->get('document_name');
-		$filepath = 'documents/originals/test/'.$message_uid.'_'.$document_name;
+	public function actionUnitsByCategory($category) {
+		Yii::$app->response->format = 'json';
 
-		Yii::$app->response->format = 'raw';
+		$categories = array_keys(Categories::list);
+		if (in_array($category, $categories)) {
+			$units = Categories::list[$category];
+			$units = array_values($units);
+			$units = array_unique($units);
+			sort($units);
+			$units = array_map(fn($v) => ltrim(strrchr($v, '\\'), '\\'), $units);
+		} else {
+			Yii::$app->response->statusCode = 404;
+			return [
+				'success' => false,
+				'message' => 'Invalid category'
+			];
+		}
 
-		header('Content-Type: application/octet-stream');
-		header('Content-Disposition: attachment; filename="'.rawurlencode($document_name).'"');
-		header('Content-Length: '.filesize($filepath));
-		header('Content-Transfer-Encoding: binary');
+		$response = [
+			'success' => true,
+			'message' => 'Units list retrieved.',
+			'data' => [
+				'units' => $units
+			],
+		];
 
-		readfile($filepath);
-
-		return '';
+		return $response;
 	}
 }
