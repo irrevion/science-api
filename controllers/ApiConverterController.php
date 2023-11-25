@@ -6,6 +6,7 @@ use Yii;
 use yii\web\Controller;
 use yii\web\Response;
 use irrevion\science\Physics\Unit\Categories;
+use irrevion\science\Physics\Entities\Quantity;
 use app\helpers\Utils;
 
 
@@ -15,6 +16,7 @@ class ApiConverterController extends Controller {
 		Yii::$app->response->format = 'json';
 
 		$categories = array_keys(Categories::list);
+		// $categories = array_map(fn($v) => Categories::camelCase($v), $categories);
 
 		$response = [
 			'success' => true,
@@ -54,5 +56,56 @@ class ApiConverterController extends Controller {
 		];
 
 		return $response;
+	}
+
+	public function actionConvert($post) {
+		if (!Yii::$app->request->isPost) {
+			Yii::$app->response->statusCode = 404;
+			return [
+				'success' => false,
+				'message' => 'Invalid method'
+			];
+		}
+
+		$v = Yii::$app->request->post('value');
+		$from = Yii::$app->request->post('from');
+		$to = Yii::$app->request->post('to');
+
+		list($from_category, $from_unit) = explode('.', $from);
+		$from = Categories::find($from_unit, $from_category);
+		if (empty($from)) {
+			Yii::$app->response->statusCode = 404;
+			return [
+				'success' => false,
+				'message' => 'Invalid "from" unit'
+			];
+		}
+		$x = new Quantity($v, $from_unit);
+
+		list($to_category, $to_unit) = explode('.', $to);
+		$to = Categories::find($to_unit, $to_category);
+		if (empty($to)) {
+			Yii::$app->response->statusCode = 404;
+			return [
+				'success' => false,
+				'message' => 'Invalid "to" unit'
+			];
+		}
+		$y = $x->convert($to);
+
+		return [
+			'success' => true,
+			'message' => 'Value successfully converted',
+			'data' => [
+				'result' => [
+					'value' => $y->value,
+					'measure' => $y->unit['measure'],
+					'unit_system' => $y->unit['unit_system'],
+					'descr' => $y->unit['descr'],
+					'as_string' => $y->toString(),
+					'from_as_string' => $x->toString(),
+				]
+			]
+		];
 	}
 }
