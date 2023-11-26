@@ -138,16 +138,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irrevion/science.git",
-                "reference": "c0fe777f44e3b94b4bd01a535b9557248133c3a3"
+                "reference": "deac28abe54fdaaf2c417c9244e2a3edcc4d2bff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irrevion/science/zipball/c0fe777f44e3b94b4bd01a535b9557248133c3a3",
-                "reference": "c0fe777f44e3b94b4bd01a535b9557248133c3a3",
+                "url": "https://api.github.com/repos/irrevion/science/zipball/deac28abe54fdaaf2c417c9244e2a3edcc4d2bff",
+                "reference": "deac28abe54fdaaf2c417c9244e2a3edcc4d2bff",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2"
+                "php": ">=8.1"
             },
             "default-branch": true,
             "type": "library",
@@ -170,13 +170,14 @@
             "homepage": "https://github.com/irrevion/science/",
             "keywords": [
                 "math",
+                "physics",
                 "science"
             ],
             "support": {
                 "issues": "https://github.com/irrevion/science/issues",
-                "source": "https://github.com/irrevion/science/tree/main"
+                "source": "https://github.com/irrevion/science/tree/v0.0.2"
             },
-            "time": "2023-11-24T22:59:59+00:00"
+            "time": "2023-11-26T05:04:20+00:00"
         },
         {
             "name": "yidas/yii2-composer-bower-skip",
