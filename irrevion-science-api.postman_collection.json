@@ -353,6 +353,252 @@
 					"body": "{\n    \"success\": true,\n    \"message\": \"Units list retrieved.\",\n    \"data\": {\n        \"units\": [\n            \"ElectronVolt\",\n            \"Joule\"\n        ]\n    }\n}"
 				}
 			]
+		},
+		{
+			"name": "convert energy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"value\":\"5\",\"from\":\"energy.HartreeEnergy\",\"to\":\"energy.ElectronVolt\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/science-api/web/api/physics/units/convert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"science-api",
+						"web",
+						"api",
+						"physics",
+						"units",
+						"convert"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"value\":\"5\",\"from\":\"energy.HartreeEnergy\",\"to\":\"energy.ElectronVolt\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/science-api/web/api/physics/units/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"science-api",
+								"web",
+								"api",
+								"physics",
+								"units",
+								"convert"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 22:23:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Debug-Tag",
+							"value": "6563c5704631e"
+						},
+						{
+							"key": "X-Debug-Duration",
+							"value": "90"
+						},
+						{
+							"key": "X-Debug-Link",
+							"value": "/science-api/web/debug/default/view?tag=6563c5704631e"
+						},
+						{
+							"key": "Content-Length",
+							"value": "745"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Value successfully converted\",\n    \"data\": {\n        \"result\": {\n            \"value\": 136.05693122994018,\n            \"measure\": \"eV\",\n            \"unit_system\": \"NonStandard\",\n            \"descr\": \"In physics, an electronvolt (symbol eV, also written electron-volt and electron volt) is the measure of an amount of kinetic energy gained by a single electron accelerating from rest through an electric potential difference of one volt in vacuum. When used as a unit of energy, the numerical value of 1 eV in joules (symbol J) is equivalent to the numerical value of the charge of an electron in coulombs (symbol C). Under the 2019 redefinition of the SI base units, this sets 1 eV equal to the exact value 1.602176634×10−19 J.\",\n            \"as_string\": \"136.05693122994 eV\",\n            \"from_as_string\": \"5 Eh\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "convert energy (invalid)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"value\":\"5\",\"from\":\"energy.HartreeEnergy\",\"to\":\"energy.Kilogram\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/science-api/web/api/physics/units/convert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"science-api",
+						"web",
+						"api",
+						"physics",
+						"units",
+						"convert"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "err",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"value\":\"5\",\"from\":\"energy.HartreeEnergy\",\"to\":\"energy.Kilogram\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/science-api/web/api/physics/units/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"science-api",
+								"web",
+								"api",
+								"physics",
+								"units",
+								"convert"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 22:27:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Debug-Tag",
+							"value": "6563c6491eb4a"
+						},
+						{
+							"key": "X-Debug-Duration",
+							"value": "101"
+						},
+						{
+							"key": "X-Debug-Link",
+							"value": "/science-api/web/debug/default/view?tag=6563c6491eb4a"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Invalid \\\"to\\\" unit\"\n}"
+				}
+			]
 		}
 	]
 }

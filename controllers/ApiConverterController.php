@@ -12,6 +12,11 @@ use app\helpers\Utils;
 
 class ApiConverterController extends Controller {
 
+	public function beforeAction($action='') {
+		Yii::$app->controller->enableCsrfValidation = false;
+		return parent::beforeAction($action);
+	}
+
 	public function actionUnitCategories() {
 		Yii::$app->response->format = 'json';
 
@@ -58,7 +63,9 @@ class ApiConverterController extends Controller {
 		return $response;
 	}
 
-	public function actionConvert($post) {
+	public function actionConvert() {
+		Yii::$app->response->format = 'json';
+
 		if (!Yii::$app->request->isPost) {
 			Yii::$app->response->statusCode = 404;
 			return [
@@ -67,9 +74,10 @@ class ApiConverterController extends Controller {
 			];
 		}
 
-		$v = Yii::$app->request->post('value');
-		$from = Yii::$app->request->post('from');
-		$to = Yii::$app->request->post('to');
+		$post = Utils::parseJsonRequest();
+		$v = $post['value'];
+		$from = $post['from'];
+		$to = $post['to'];
 
 		list($from_category, $from_unit) = explode('.', $from);
 		$from = Categories::find($from_unit, $from_category);
@@ -80,7 +88,7 @@ class ApiConverterController extends Controller {
 				'message' => 'Invalid "from" unit'
 			];
 		}
-		$x = new Quantity($v, $from_unit);
+		$x = new Quantity($v, $from);
 
 		list($to_category, $to_unit) = explode('.', $to);
 		$to = Categories::find($to_unit, $to_category);
@@ -102,8 +110,8 @@ class ApiConverterController extends Controller {
 					'measure' => $y->unit['measure'],
 					'unit_system' => $y->unit['unit_system'],
 					'descr' => $y->unit['descr'],
-					'as_string' => $y->toString(),
-					'from_as_string' => $x->toString(),
+					'as_string' => "$y",
+					'from_as_string' => "$x",
 				]
 			]
 		];
