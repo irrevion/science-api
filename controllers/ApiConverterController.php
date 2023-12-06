@@ -14,6 +14,7 @@ class ApiConverterController extends Controller {
 
 	public function beforeAction($action='') {
 		Yii::$app->controller->enableCsrfValidation = false;
+		Yii::$app->response->headers->set('Access-Control-Allow-Origin', '*');
 		return parent::beforeAction($action);
 	}
 
