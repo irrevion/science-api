@@ -6,6 +6,8 @@ protected/data/*.db
 themes/classic/views/
 
 /vendor/
-/config/
+/config/db.php
+/config/console.php
+/config/params.php
 .trash/
 runtime/

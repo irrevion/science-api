@@ -138,12 +138,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irrevion/science.git",
-                "reference": "deac28abe54fdaaf2c417c9244e2a3edcc4d2bff"
+                "reference": "6bfa89242b52fefa1612626da825469c9e9e01fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irrevion/science/zipball/deac28abe54fdaaf2c417c9244e2a3edcc4d2bff",
-                "reference": "deac28abe54fdaaf2c417c9244e2a3edcc4d2bff",
+                "url": "https://api.github.com/repos/irrevion/science/zipball/6bfa89242b52fefa1612626da825469c9e9e01fd",
+                "reference": "6bfa89242b52fefa1612626da825469c9e9e01fd",
                 "shasum": ""
             },
             "require": {
@@ -175,9 +175,9 @@
             ],
             "support": {
                 "issues": "https://github.com/irrevion/science/issues",
-                "source": "https://github.com/irrevion/science/tree/v0.0.2"
+                "source": "https://github.com/irrevion/science/tree/main"
             },
-            "time": "2023-11-26T05:04:20+00:00"
+            "time": "2023-12-02T17:36:57+00:00"
         },
         {
             "name": "yidas/yii2-composer-bower-skip",

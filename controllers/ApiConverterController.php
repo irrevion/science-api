@@ -15,6 +15,7 @@ class ApiConverterController extends Controller {
 	public function beforeAction($action='') {
 		Yii::$app->controller->enableCsrfValidation = false;
 		Yii::$app->response->headers->set('Access-Control-Allow-Origin', '*');
+		Yii::$app->response->headers->set('Access-Control-Max-Age', '86400');
 		return parent::beforeAction($action);
 	}
 
@@ -23,6 +24,8 @@ class ApiConverterController extends Controller {
 
 		$categories = array_keys(Categories::list);
 		// $categories = array_map(fn($v) => Categories::camelCase($v), $categories);
+		$categories = array_filter($categories, fn($v) => (count(array_unique(Categories::list[$v]))>1));
+		sort($categories);
 
 		$response = [
 			'success' => true,
@@ -65,6 +68,15 @@ class ApiConverterController extends Controller {
 	}
 
 	public function actionConvert() {
+		if (Yii::$app->request->isOptions) {
+			Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+			Yii::$app->response->headers->set('Access-Control-Allow-Credentials', 'true');
+			Yii::$app->response->headers->set('Access-Control-Allow-Headers', '*');
+			Yii::$app->response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+			// Yii::$app->response->headers->set('Access-Control-Request-Method', 'POST');
+			return '';
+		}
+
 		Yii::$app->response->format = 'json';
 
 		if (!Yii::$app->request->isPost) {
