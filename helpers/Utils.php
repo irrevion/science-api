@@ -114,7 +114,7 @@ class Utils {
 
 	/* validation */
 
-	public static function checkPIN($pin) { // 2020-10-06
+	public static function checkPIN($pin) {
 		return preg_match('/^[0-9]{1}[0-9A-Z]{6}$/i', $pin);
 	}
 

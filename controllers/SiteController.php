@@ -23,7 +23,7 @@ class SiteController extends Controller {
 			'message' => 'Invalid endpoint',
 			'code' => 404,
 			'errors' => [
-				(array) $exception
+				((@YII_ENV=='dev')? (array) $exception: null)
 			],
 		];
 

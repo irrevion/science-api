@@ -138,12 +138,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irrevion/science.git",
-                "reference": "6bfa89242b52fefa1612626da825469c9e9e01fd"
+                "reference": "e12d495adbb569a32dfea1185e0b0dc1ada62171"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irrevion/science/zipball/6bfa89242b52fefa1612626da825469c9e9e01fd",
-                "reference": "6bfa89242b52fefa1612626da825469c9e9e01fd",
+                "url": "https://api.github.com/repos/irrevion/science/zipball/e12d495adbb569a32dfea1185e0b0dc1ada62171",
+                "reference": "e12d495adbb569a32dfea1185e0b0dc1ada62171",
                 "shasum": ""
             },
             "require": {
@@ -169,15 +169,21 @@
             "description": "PHP library for extended mathematical operations",
             "homepage": "https://github.com/irrevion/science/",
             "keywords": [
+                "compex-numbers",
+                "linear-algebra",
                 "math",
+                "matrix",
                 "physics",
-                "science"
+                "quaternion",
+                "science",
+                "units-converter",
+                "vector"
             ],
             "support": {
                 "issues": "https://github.com/irrevion/science/issues",
                 "source": "https://github.com/irrevion/science/tree/main"
             },
-            "time": "2023-12-02T17:36:57+00:00"
+            "time": "2024-12-31T22:46:28+00:00"
         },
         {
             "name": "yidas/yii2-composer-bower-skip",
@@ -510,7 +516,7 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
